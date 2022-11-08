@@ -89,6 +89,7 @@ body {
   --dark-black: rgba(0, 0, 0, 0.6);
   --black-burger: rgba(0, 0, 0, 0.9);
   --black: #000000;
+  --red: #D11616;
   --burger-line: 3px;
 }
 
@@ -3550,6 +3551,7 @@ body {
 }
 
 .contacts__label {
+  display: block;
   position: relative;
   margin-right: 19px;
   width: calc(270 / 560 * 100%);
@@ -3571,12 +3573,13 @@ body {
   outline: none;
 }
 
-.js-validate-error-label {
+.just-validate-error-label {
   position: absolute;
-  left: 24px;
-  top: -16px;
-  font-size: 12px;
   line-height: 16.34px;
+}
+
+.is-invalid {
+  border: 1px solid var(--red);
 }
 
 .contacts__btn {

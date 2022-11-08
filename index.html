@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://unpkg.com/simplebar/dist/simplebar.css"/>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
   <div class="head">
@@ -221,7 +221,7 @@
           </div>
           <div class="swiper-container gallery__container">
             <div class="swiper-wrapper">
-              <a class="swiper-slide gallery__slide js-artist" href="#">
+              <a class="swiper-slide gallery__slide js-artist" href="#" aria-label="Подробнее про картину">
                 <picture>
                   <source srcset="img/gallery__mobile-foto-1.webp" media="(min-width: 320px) and (max-width: 576px)">
                   <source srcset="img/gallery__small-foto-1.jpg" media="(min-width: 577px) and (max-width: 768px)">
@@ -230,7 +230,7 @@
                   <img class="gallery__image" srcset="img/gallery__default-foto-1.jpg" alt="Default image" src="#" width="290" height="367">
                 </picture>
               </a>
-              <a class="swiper-slide gallery__slide" href="#">
+              <a class="swiper-slide gallery__slide" href="#" aria-label="Подробнее про картину">
                 <picture>
                   <source srcset="img/gallery__mobile-foto-2.webp" media="(min-width: 320px) and (max-width: 576px)">
                   <source srcset="img/gallery__small-foto-2.jpg" media="(min-width: 577px) and (max-width: 768px)">
@@ -239,7 +239,7 @@
                   <img class="gallery__image" srcset="img/gallery__default-foto-2.jpg" alt="Default image" src="#" width="290" height="367">
                 </picture>
               </a>
-              <a class="swiper-slide gallery__slide" href="#">
+              <a class="swiper-slide gallery__slide" href="#" aria-label="Подробнее про картину">
                 <picture>
                   <source srcset="img/gallery__mobile-foto-3.webp" media="(min-width: 320px) and (max-width: 576px)">
                   <source srcset="img/gallery__small-foto-3.jpg" media="(min-width: 577px) and (max-width: 768px)">
@@ -248,7 +248,7 @@
                   <img class="gallery__image" srcset="img/gallery__default-foto-3.jpg" alt="Default image" src="#" width="290" height="367">
                 </picture>
               </a>
-              <a class="swiper-slide gallery__slide" href="#">
+              <a class="swiper-slide gallery__slide" href="#" aria-label="Подробнее про картину">
                 <picture>
                   <source srcset="img/gallery__mobile-foto-4.webp" media="(min-width: 320px) and (max-width: 576px)">
                   <source srcset="img/gallery__small-foto-4.jpg" media="(min-width: 577px) and (max-width: 768px)">
@@ -257,7 +257,7 @@
                   <img class="gallery__image" srcset="img/gallery__default-foto-4.jpg" alt="Default image" src="#" width="290" height="367">
                 </picture>
               </a>
-              <a class="swiper-slide gallery__slide" href="#">
+              <a class="swiper-slide gallery__slide" href="#" aria-label="Подробнее про картину">
                 <picture>
                   <source srcset="img/gallery__mobile-foto-5.webp" media="(min-width: 320px) and (max-width: 576px)">
                   <source srcset="img/gallery__small-foto-5.jpg" media="(min-width: 577px) and (max-width: 768px)">
@@ -266,7 +266,7 @@
                   <img class="gallery__image" srcset="img/gallery__default-foto-5.jpg" alt="Default image" src="#" width="290" height="367">
                 </picture>
               </a>
-              <a class="swiper-slide gallery__slide" href="#">
+              <a class="swiper-slide gallery__slide" href="#" aria-label="Подробнее про картину">
                 <picture>
                   <source srcset="img/gallery__mobile-foto-6.webp" media="(min-width: 320px) and (max-width: 576px)">
                   <source srcset="img/gallery__small-foto-6.jpg" media="(min-width: 577px) and (max-width: 768px)">
@@ -752,13 +752,13 @@
           <form class="contacts__list" action="send.php" method="POST">
             <div class="contacts__fields">
               <label class="contacts__label">
-                <input class="contacts__input" type="text" name="name" placeholder="Имя*" data-validate-field="name">
+                <input class="contacts__input" type="text" placeholder="Имя*" name="name" id="name">
               </label>
               <label class="contacts__label">
-                <input class="contacts__input" type="tel" name="phone" placeholder="Телефон*" data-validate-field="tel">
+                <input class="contacts__input" type="tel" placeholder="Телефон*" name="tel" id="tel">
               </label>
             </div>
-            <button class="contacts__btn">Заказать <span class="contacts__mobile-none">обратный звонок</span></button>
+            <button class="contacts__btn" type="submit">Заказать <span class="contacts__mobile-none">обратный звонок</span></button>
           </form>
           <div class="contacts__cube">
             <p class="contacts__desc">Связаться в один клик</p>
@@ -815,6 +815,9 @@
       </div>
     </div>
   </footer>
+  <script src="libs/choices.min.js"></script>
+  <script src="libs/just-validate3.3.3.min.js"></script>
+  <script src="libs/inputmask.min.js"></script>
   <script src="https://unpkg.com/simplebar/dist/simplebar.min.js"></script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="js/settings.js"></script>
@@ -822,15 +825,12 @@
   <script src="js/search-field.js"></script>
   <script src="js/dropdown.js"></script>
   <script src="js/swiper.js"></script>
-  <script src="js/choices.min.js"></script>
   <script src="js/selector.js"></script>
   <script src="js/tabs.js"></script>
   <script src="https://unpkg.com/@popperjs/core"></script>
   <script src="https://unpkg.com/tippy.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
-  <script src="js/just-validate.min.js"></script>
-  <script src="js/inputmask.min.js"></script>
   <script src="js/validate.js"></script>
   <script src="https://api-maps.yandex.ru/2.1/?apikey=b54f30be-1a24-40ad-a579-8766a2af1e77&lang=ru_RU"></script>
   <script src="js/map.js"></script>
