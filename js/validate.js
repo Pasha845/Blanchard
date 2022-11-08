@@ -3,32 +3,43 @@ var im = new Inputmask("+7 (999)-999-99-99");
 
 im.mask(selector);
 
-new JustValidate('.contacts__list', {
-  rules: {
-    name: {
-      required: true,
-      minLength: 2,
-      maxLenght: 30,
-      errorMessage: 'Passwords should be the same'
+const validation = new JustValidate('.contacts__list', {
+  errorFieldCssClass: "is-invalid",
+  errorLabelStyle: {
+    left: "24px",
+    top: "-16px",
+    fontSize: "12px",
+    color: '#D11616'
+  }
+});
+
+validation
+  .addField('#name', [
+    {
+      rule: 'minLength',
+      value: 3,
+      errorMessage: 'Имя дожно состоять минимум из 3 символов'
     },
-    errorMessage: 'Passwords should be the same',
-    tel: {
-      required: true,
+    {
+      rule: 'maxLength',
+      value: 30,
+      errorMessage: 'Имя больше 30 символов'
+    },
+    {
+      rule: 'required',
+      errorMessage: 'Недопустимый формат'
+    },
+  ])
+  .addField('#tel', [
+    {
+      rule: 'required',
       function: (name, value) => {
         const phone = selector.inputmask.unmaskedvalue()
         return Number(phone) && phone.length === 10
-      }
+      },
+      errorMessage: 'Недопустимый формат'
     }
-  },
-  messages: {
-    name: {
-      required: 'Недопустимый формат'
-    },
-    tel: {
-      required: 'Недопустимый формат'
-    }
-  }
-})
+  ])
 
 tippy('.js-tultipe', {
   theme: 'white-violet'
