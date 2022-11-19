@@ -5,6 +5,7 @@ im.mask(selector);
 
 const validation = new JustValidate('.contacts__list', {
   errorFieldCssClass: "is-invalid",
+  successFieldCssClass: "is-valid",
   errorLabelStyle: {
     left: "24px",
     top: "-16px",
@@ -40,6 +41,10 @@ validation
       errorMessage: 'Недопустимый формат'
     }
   ])
+  .onSuccess(() => {
+    document.getElementById('pop-up').style.visibility = "visible";
+    document.getElementById('pop-up').style.opacity = 1;
+  })
 
 tippy('.js-tultipe', {
   theme: 'white-violet'

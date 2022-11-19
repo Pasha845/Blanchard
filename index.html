@@ -2,7 +2,9 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="Главная страница включает выпадающее окна, 4 слайдера на Swiper.js,
+    модальное окно, аккордеон, тултипы, форму поиска с валидацией и отправкой формы и карту.">
   <title>Blanchard</title>
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
   <link rel="stylesheet" href="https://unpkg.com/simplebar/dist/simplebar.css"/>
@@ -199,13 +201,40 @@
     </section>
 
     <section class="gallery" id="gallery">
+      <div class="modal" id="modal">
+        <div class="modal-container flex">
+          <a class="modal-close container-site" href="#">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.666641 15.3043L15.3333 3.17761e-05L16 0.695679L1.33331 15.9999L0.666641 15.3043Z" fill="currentColor"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.666725 -2.96187e-06L15.3334 15.3042L14.6667 15.9999L5.76143e-05 0.695644L0.666725 -2.96187e-06Z" fill="currentColor"/>
+            </svg>
+          </a>
+          <picture>
+            <source srcset="img/modal-mobile-foto.webp" media="(min-width: 320px) and (max-width: 576px)">
+            <source srcset="img/modal-small-foto.jpg" media="(min-width: 577px) and (max-width: 768px)">
+            <source srcset="img/modal-mini-foto.jpg" media="(min-width: 769px) and (max-width: 1024px)">
+            <source srcset="img/modal-default-foto.jpg" media="(min-width: 1025px)">
+            <img srcset="img/modal-default-foto.jpg" alt="Default image" src="#" width="400" height="500">
+          </picture>
+          <div class="modal-div">
+            <h2 class="modal-title">Казимир Малевич</h2>
+            <p class="modal-name">«Женщина с граблями»</p>
+            <p class="modal-year">1931–1932</p>
+            <p class="modal-text">
+              Картина из второй серии крестьянского цикла работ Казимира Малевича. Художник принялся за
+              её создание в 1930–1931 годах, после того, как первый цикл был утерян после Берлинской и
+              Варшавской выставок в 1927 году.
+            </p>
+          </div>
+        </div>
+      </div>
       <div class="gallery__wrap container">
         <div class="gallery__left-elem">
           <div class="gallery__section">
             <h2 class="gallery__title container-title">Галерея</h2>
             <div class="gallery__filter">
               <h3 class="gallery__filter-subtitle">Фильтр:</h3>
-              <select class="js-gallery-choices">
+              <select class="js-gallery-choices" id="art" aria-labelledby="artChoice">
                 <option name="Живопись" value="culture">Живопись</option>
                 <option name="Рисунок" value="picture">Рисунок</option>
                 <option name="Скульптура" value="sculpture">Скульптура</option>
@@ -230,7 +259,7 @@
                   <img class="gallery__image" srcset="img/gallery__default-foto-1.jpg" alt="Default image" src="#" width="290" height="367">
                 </picture>
               </a>
-              <a class="swiper-slide gallery__slide" href="#" aria-label="Подробнее про картину">
+              <a class="swiper-slide gallery__slide" href="#modal" aria-label="Подробнее про картину">
                 <picture>
                   <source srcset="img/gallery__mobile-foto-2.webp" media="(min-width: 320px) and (max-width: 576px)">
                   <source srcset="img/gallery__small-foto-2.jpg" media="(min-width: 577px) and (max-width: 768px)">
@@ -287,7 +316,7 @@
             </span>
           </label>
           <label class="gallery__checkbox-wrap">
-            <input class="gallery__checkbox checkbox-hidden" type="checkbox" name="check-two">
+            <input class="gallery__checkbox checkbox-hidden" type="checkbox" name="check-two" checked>
             <span class="gallery__checkbox-content">
               <span class="gallery__visual-check"></span>
               <span class="gallery__check-text">XX век</span>
@@ -743,13 +772,29 @@
     </section>
 
     <section class="contacts" id="contacts">
+      <div class="modal" id="pop-up">
+        <div class="pop-up-container">
+          <a class="modal-close" onclick="location.reload()">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.666641 15.3043L15.3333 3.17761e-05L16 0.695679L1.33331 15.9999L0.666641 15.3043Z" fill="currentColor"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.666725 -2.96187e-06L15.3334 15.3042L14.6667 15.9999L5.76143e-05 0.695644L0.666725 -2.96187e-06Z" fill="currentColor"/>
+            </svg>
+          </a>
+          <div class="pop-up-div flex">
+            <svg width="172" height="117" viewBox="0 0 21 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 25H13.1558C18.3442 25 21 22.5893 21 18V17.9286C21 14.5179 19.3116 12.4464 16.0578 11.8571V11.5357C18.7839 11 20.2085 9.17857 20.2085 6.21429V6.125C20.2085 2.08929 17.7286 0 12.8744 0H0V25ZM5.18844 10.2321V3.53571H11.3266C13.8065 3.53571 15.0377 4.64286 15.0377 6.82143V6.89286C15.0377 9.10714 13.8065 10.2321 11.3266 10.2321H5.18844ZM5.18844 21.4464V13.4821H11.4849C14.2111 13.4821 15.5653 14.8036 15.5653 17.3929V17.4643C15.5653 20.1071 14.2111 21.4464 11.4849 21.4464H5.18844Z" fill="#ECECEC"/>
+            </svg>
+            <p class="pop-up-text">Спасибо, мы вам перезвоним!</p>
+          </div>
+        </div>
+      </div>
       <div class="contacts__container">
         <div class="contacts__group container">
           <div class="contacts__adress">
             <h3 class="contacts__subtitle">Шоурум №4</h3>
             <p class="contacts__text">Леонтьевский переулок, дом 5/1</p>
           </div>
-          <form class="contacts__list" action="send.php" method="POST">
+          <form class="contacts__list" action="send.php" method="post">
             <div class="contacts__fields">
               <label class="contacts__label">
                 <input class="contacts__input" type="text" placeholder="Имя*" name="name" id="name">
@@ -816,7 +861,7 @@
     </div>
   </footer>
   <script src="libs/choices.min.js"></script>
-  <script src="libs/just-validate3.3.3.min.js"></script>
+  <script src="libs/just-validate.min.js"></script>
   <script src="libs/inputmask.min.js"></script>
   <script src="https://unpkg.com/simplebar/dist/simplebar.min.js"></script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
