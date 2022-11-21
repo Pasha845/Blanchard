@@ -58,6 +58,7 @@ a {
 img, svg {
   max-width: 100%;
   height: auto;
+  vertical-align: bottom;
 }
 
 body {
@@ -1677,10 +1678,10 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.7);
-  transition: opacity 500ms;
   visibility: hidden;
   opacity: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
 }
 
 .modal:target {
@@ -1689,9 +1690,9 @@ body {
 }
 
 .modal-container {
+  position: relative;
   margin: 80px auto;
   width: 900px;
-  position: relative;
   background-color: var(--white);
   box-shadow: 0 0 80px rgba(0, 0, 0, 0.8);
   transition: .5s;
@@ -1699,7 +1700,7 @@ body {
 
 .modal-close {
   position: absolute;
-  top: 20px;
+  top: 3px;
   right: 20px;
   color: var(--black);
   cursor: pointer;

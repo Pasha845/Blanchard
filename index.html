@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
-  <meta name="description" content="Главная страница включает выпадающее окна, 4 слайдера на Swiper.js,
+  <meta name="description" content="Главная страница включает ссылки с навигацией по сайту, выпадающее окна с фото, 4 слайдера на Swiper.js,
     модальное окно, аккордеон, тултипы, форму поиска с валидацией и отправкой формы и карту.">
   <title>Blanchard</title>
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
-  <link rel="stylesheet" href="https://unpkg.com/simplebar/dist/simplebar.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/simplebar/dist/simplebar.css">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -203,7 +203,7 @@
     <section class="gallery" id="gallery">
       <div class="modal" id="modal">
         <div class="modal-container flex">
-          <a class="modal-close container-site" href="#">
+          <a class="modal-close container-sit" href="#">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M0.666641 15.3043L15.3333 3.17761e-05L16 0.695679L1.33331 15.9999L0.666641 15.3043Z" fill="currentColor"/>
             <path fill-rule="evenodd" clip-rule="evenodd" d="M0.666725 -2.96187e-06L15.3334 15.3042L14.6667 15.9999L5.76143e-05 0.695644L0.666725 -2.96187e-06Z" fill="currentColor"/>
@@ -234,10 +234,10 @@
             <h2 class="gallery__title container-title">Галерея</h2>
             <div class="gallery__filter">
               <h3 class="gallery__filter-subtitle">Фильтр:</h3>
-              <select class="js-gallery-choices" id="art" aria-labelledby="artChoice">
-                <option name="Живопись" value="culture">Живопись</option>
-                <option name="Рисунок" value="picture">Рисунок</option>
-                <option name="Скульптура" value="sculpture">Скульптура</option>
+              <select class="js-gallery-choices">
+                <option value="culture">Живопись</option>
+                <option value="picture">Рисунок</option>
+                <option value="sculpture">Скульптура</option>
               </select>
             </div>
           </div>
