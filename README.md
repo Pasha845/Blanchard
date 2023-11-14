@@ -1,6 +1,6 @@
 # Одностраничный сайт для проекта "Blanchard - художественная галерея"
 
-![Desktop 1920](https://user-images.githubusercontent.com/106194295/208978423-afc3056e-7fc5-433c-85ec-4807774b73a2.jpg)
+![image 3](https://github.com/Pasha845/Blanchard/assets/106194295/8803ebf9-4fce-480d-997d-f14eed42f1bb)
 
 ## В проекте использовались следующие библеотеки и плагины:
 - SimpleBar - создание скроллбара,
